@@ -75,7 +75,7 @@ namespace GraphHelper
                 case ExpressionType.NotEqual:
                     return "(" + compileExpression<T>(ex.Left) + " ne " + compileExpression<T>(ex.Right) + ")";
             }
-            return "";
+            throw new UnsupportedOperationException(ex.NodeType);
         }
 
         private static bool expressionContainsGraphType<T>(Expression e)
