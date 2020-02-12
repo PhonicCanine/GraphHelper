@@ -39,6 +39,6 @@ var users = await graph.Users.Request().Where((u) => u.GivenName.StartsWith(filt
     ```
     and will reduce to:
     `Filter("(startswith(givenName,'mary'))")`
-* As the Graph API does not distinguish between `Or` (`|`) and `OrElse` (`||`) or `And` (`&`) and `AndAlso` (`&&`), both instances of each will reduce to `and` or `or` respectively.
+* As the Graph API does not distinguish between `Or` (`|`) and `OrElse` (`||`) or `And` (`&`) and `AndAlso` (`&&`), both instances of each will reduce to `or` or `and` respectively.
 * If an illegal method is executed on the predicate's parameter, a runtime exception will be thrown (`MethodNotSupportedException`)
 * If an unsupported operation is used within the predicate (such as `++`), an exception will be thrown (`UnsupportedOperationException`)
